@@ -1,0 +1,19 @@
+{
+    "root": [
+        [".gitignore",
+        "LICENSE",
+        "README.md",
+        "project.toml"],
+        [
+        {"project": [
+            "languages_code",
+            "main.py",
+            "pages",
+            "templates",
+            {"static": ["css", "sass","js"]}
+
+        ]
+    
+    }
+    ]]
+}
