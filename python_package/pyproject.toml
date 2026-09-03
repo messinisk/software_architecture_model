@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "software_architecture_model"
+version = "1.0.0"
+description = "Software architecture models in Python, PHP, and JS"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [] # Προσθέστε python εξαρτήσεις αν υπάρχουν

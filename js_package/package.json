@@ -1,0 +1,13 @@
+{
+  "name": "software_architecture_model",
+  "version": "1.0.0",
+  "description": "Software architecture models in Python, PHP, and JS",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/messinisk/software_architecture_model"
+  },
+  "keywords": ["mvc", "mvvm", "architecture"],
+  "author": "messinisk",
+  "license": "Apache-2.0"
+}

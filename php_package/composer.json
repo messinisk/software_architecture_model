@@ -1,0 +1,15 @@
+{
+    "name": "messinisk/software_architecture_model",
+    "description": "Software architecture models in Python, PHP, and JS",
+    "type": "library",
+    "license": "Apache-2.0",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "Messinisk\\SoftwareArchitectureModel\\": ""
+        }
+    },
+    "require": {
+        "php": ">=8.0"
+    }
+}
