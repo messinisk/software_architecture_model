@@ -1,19 +1,19 @@
 {
-    "root": [
-        [".gitignore",
-        "LICENSE",
-        "README.md",
-        "project.toml"],
-        [
-        {"project": [
-            "languages_code",
-            "main.py",
-            "pages",
-            "templates",
-            {"static": ["css", "sass","js"]}
-
-        ]
-    
+  "architecture": "MVC",
+  "root": [
+    { "name": ".gitignore", "type": "file" },
+    { "name": "LICENSE", "type": "file" },
+    { "name": "README.md", "type": "file" },
+    { "name": "project.toml", "type": "file" },
+    {
+      "name": "app",
+      "type": "directory",
+      "children": [
+        { "name": "model", "type": "directory", "role": "logic" },
+        { "name": "views", "type": "directory", "role": "html" },
+        { "name": "controllers", "type": "directory", "role": "data, validate" },
+        { "name": "user", "type": "directory", "role": "sub-module" }
+      ]
     }
-    ]]
+  ]
 }

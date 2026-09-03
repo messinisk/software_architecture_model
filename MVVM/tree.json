@@ -1,0 +1,33 @@
+{
+  "architecture": "MVVM",
+  "root": [
+    { "name": ".gitignore", "type": "file" },
+    { "name": "README.md", "type": "file" },
+    {
+      "name": "src",
+      "type": "directory",
+      "children": [
+        { 
+          "name": "models", 
+          "type": "directory", 
+          "role": "data_and_business_logic" 
+        },
+        { 
+          "name": "views", 
+          "type": "directory", 
+          "role": "ui_layout_and_structure" 
+        },
+        { 
+          "name": "viewmodels", 
+          "type": "directory", 
+          "role": "state_management_and_data_binding" 
+        },
+        { 
+          "name": "services", 
+          "type": "directory", 
+          "role": "api_calls_and_external_data" 
+        }
+      ]
+    }
+  ]
+}
