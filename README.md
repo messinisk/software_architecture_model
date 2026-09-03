@@ -1,2 +1,12 @@
 # software_architecture_model
-software architecture model
+
+- model/
+    - MVC
+    - MVVM
+
+## Supporting Languages
+- python
+- Nodejs
+- PHP 
+
+...
