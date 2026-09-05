@@ -1,0 +1,92 @@
+ {
+    "myproject": [
+        "manage.py",
+        "requirements.txt",
+        "README.md",
+        ".gitignore",
+        {
+            "myproject": [
+                "__init__.py",
+                "settings.py",
+                "urls.py",
+                "asgi.py",
+                "wsgi.py"
+            ]
+        },
+        {
+            "apps": [
+                {
+                    "blog": [
+                        "__init__.py",
+                        "admin.py",
+                        "apps.py",
+                        "models.py",
+                        "views.py",
+                        "urls.py",
+                        "forms.py",
+                        "tests.py",
+                        {
+                            "migrations": [
+                                "__init__.py",
+                                "0001_initial.py"
+                            ]
+                        },
+                        {
+                            "templates": {
+                                "blog": [
+                                    "base.html",
+                                    "post_list.html",
+                                    "post_detail.html"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "accounts": [
+                        "__init__.py",
+                        "admin.py",
+                        "apps.py",
+                        "models.py",
+                        "views.py",
+                        "urls.py",
+                        "forms.py",
+                        "tests.py",
+                        {
+                            "migrations": [
+                                "__init__.py",
+                                "0001_initial.py"
+                            ]
+                        },
+                        {
+                            "templates": {
+                                "accounts": [
+                                    "login.html",
+                                    "register.html"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "templates": [
+                "base.html"
+            ]
+        },
+        {
+            "static": [
+                {"css": []},
+                {"js": []},
+                {"img": []}
+            ]
+        },
+        {
+            "tests": [
+                "__init__.py",
+                "test_integration.py"
+            ]
+        }
+    ]
+}

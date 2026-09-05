@@ -1,0 +1,76 @@
+ {
+    "flask_project": [
+        "README.md",
+        "requirements.txt",
+        ".gitignore",
+        ".env",
+        "venv/",
+        "run.py",
+        {
+            "app": [
+                "__init__.py",
+                "config.py",
+                "extensions.py",
+                {
+                    "models": [
+                        "__init__.py",
+                        "user.py",
+                        "post.py"
+                    ]
+                },
+                {
+                    "routes": [
+                        "__init__.py",
+                        "main.py",
+                        "auth.py"
+                    ]
+                },
+                {
+                    "services": [
+                        "__init__.py",
+                        "auth_service.py",
+                        "post_service.py"
+                    ]
+                },
+                {
+                    "forms": [
+                        "__init__.py",
+                        "login_form.py"
+                    ]
+                },
+                {
+                    "utils": [
+                        "__init__.py",
+                        "email.py"
+                    ]
+                },
+                {
+                    "templates": [
+                        "base.html",
+                        "index.html",
+                        {
+                            "auth": [
+                                "login.html",
+                                "register.html"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "static": [
+                        {"css": []},
+                        {"js": []},
+                        {"img": []}
+                    ]
+                }
+            ]
+        },
+        {
+            "tests": [
+                "__init__.py",
+                "test_auth.py",
+                "test_main.py"
+            ]
+        }
+    ]
+}
