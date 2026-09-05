@@ -1,0 +1,43 @@
+flask_project/
+- ├── README.md
+- ├── requirements.txt
+- ├── .gitignore
+- ├── .env
+- ├── venv/                     # προαιρετικά, virtual env (συχνά εκτός repo)
+- ├── run.py                    # entry point (τρέχει create_app)
+- ├── app/                      # κύριο application package
+   -  ├── __init__.py           # application factory, register blueprints, init extensions
+   -  ├── config.py             # κλάσεις ρυθμίσεων (Dev/Prod/Test)
+   -  ├── extensions.py         # db, login_manager, cache, κ.λπ.
+   -  ├── models/               # SQLAlchemy models
+   -  │   ├── __init__.py
+   -  │   ├── user.py
+   -  │   └── post.py
+   -  ├── routes/               # Blueprints / view functions
+   -  │   ├── __init__.py
+   -  │   ├── main.py
+   -  │   └── auth.py
+   -  ├── services/             # business logic (domain services)
+   -  │   ├── __init__.py
+   -  │   ├── auth_service.py
+   -  │   └── post_service.py
+   -  ├── forms/                # WTForms ή άλλα form classes
+   -  │   ├── __init__.py
+   -  │   └── login_form.py
+   -  ├── utils/                # helpers, decorators, κ.λπ.
+   -  │   ├── __init__.py
+   -  │   └── email.py
+   -  ├── templates/            # Jinja2 templates
+   -  │   ├── base.html
+   -  │   ├── index.html
+   -  │   └── auth/
+   -  │       ├── login.html
+   -  │       └── register.html
+   -  └── static/               # CSS, JS, images
+        -  ├── css/
+        -  ├── js/
+        -  └── img/
+- └── tests/                    # unit / integration tests
+    - ├── __init__.py
+    - ├── test_auth.py
+    - └── test_main.py
