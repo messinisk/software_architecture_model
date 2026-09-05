@@ -1,0 +1,51 @@
+ {
+    "joomla": [
+        {
+            "administrator": [
+                "components/",
+                "modules/",
+                "templates/"
+            ]
+        },
+        {
+            "components": [
+                {
+                    "com_example": [
+                        "controller.php",
+                        "models/",
+                        "views/",
+                        "tmpl/"
+                    ]
+                }
+            ]
+        },
+        {
+            "modules": [
+                {
+                    "mod_example": [
+                        "mod_example.php",
+                        "helper.php",
+                        "tmpl/"
+                    ]
+                }
+            ]
+        },
+        {
+            "templates": [
+                {
+                    "my_template": [
+                        "index.php",
+                        "css/",
+                        "js/",
+                        "images/"
+                    ]
+                }
+            ]
+        },
+        "plugins/",
+        "media/",
+        "libraries/",
+        "configuration.php",
+        "index.php"
+    ]
+}

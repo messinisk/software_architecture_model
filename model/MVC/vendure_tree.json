@@ -1,0 +1,32 @@
+{
+    "vendure": [
+        {
+            "src": [
+                {
+                    "config": [
+                        "vendure-config.ts"
+                    ]
+                },
+                {
+                    "plugins": [
+                        {
+                            "custom-plugin": [
+                                "api/",
+                                "ui/",
+                                "entities/",
+                                "services/"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "admin-ui": [
+                        "src/",
+                        "dist/"
+                    ]
+                }
+            ]
+        },
+        "package.json"
+    ]
+}

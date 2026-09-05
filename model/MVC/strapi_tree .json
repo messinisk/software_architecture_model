@@ -1,0 +1,38 @@
+{
+    "strapi": [
+        {
+            "src": [
+                "index.js",
+                {
+                    "api": [
+                        {
+                            "article": [
+                                "content-types/",
+                                "controllers/",
+                                "routes/",
+                                "services/"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "extensions": []
+                },
+                {
+                    "middlewares": []
+                },
+                {
+                    "policies": []
+                },
+                {
+                    "config": [
+                        "database.js",
+                        "server.js"
+                    ]
+                }
+            ]
+        },
+        "public/",
+        "package.json"
+    ]
+}

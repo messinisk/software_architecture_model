@@ -1,0 +1,41 @@
+{
+    "mediawiki": [
+        {
+            "includes": [
+                "api/",
+                "cache/",
+                "debug/",
+                "hooks/",
+                "specials/"
+            ]
+        },
+        {
+            "skins": [
+                {
+                    "Vector": [
+                        "Vector.php",
+                        "resources/",
+                        "templates/"
+                    ]
+                }
+            ]
+        },
+        {
+            "extensions": [
+                {
+                    "MyExtension": [
+                        "MyExtension.php",
+                        "resources/",
+                        "includes/"
+                    ]
+                }
+            ]
+        },
+        "languages/",
+        "maintenance/",
+        "resources/",
+        "vendor/",
+        "index.php",
+        "LocalSettings.php"
+    ]
+}

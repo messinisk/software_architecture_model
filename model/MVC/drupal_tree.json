@@ -1,0 +1,42 @@
+ {
+    "drupal": [
+        {
+            "core": [
+                "lib/",
+                "modules/",
+                "themes/",
+                "includes/",
+                "scripts/"
+            ]
+        },
+        {
+            "modules": [
+                {
+                    "custom_module": [
+                        "custom_module.info.yml",
+                        "custom_module.module",
+                        "src/",
+                        "templates/"
+                    ]
+                }
+            ]
+        },
+        {
+            "themes": [
+                {
+                    "custom_theme": [
+                        "custom_theme.info.yml",
+                        "templates/",
+                        "css/",
+                        "js/"
+                    ]
+                }
+            ]
+        },
+        "sites/",
+        "vendor/",
+        "index.php",
+        "update.php",
+        "autoload.php"
+    ]
+}

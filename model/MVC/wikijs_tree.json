@@ -1,0 +1,22 @@
+{
+    "wikijs": [
+        {
+            "server": [
+                "app.js",
+                "config.yml",
+                "controllers/",
+                "models/",
+                "routes/"
+            ]
+        },
+        {
+            "client": [
+                "assets/",
+                "components/",
+                "pages/"
+            ]
+        },
+        "data/",
+        "package.json"
+    ]
+}

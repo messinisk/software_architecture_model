@@ -1,0 +1,29 @@
+{
+    "reaction": [
+        {
+            "imports": [
+                "api/",
+                "plugins/",
+                "ui/"
+            ]
+        },
+        {
+            "server": [
+                "index.js",
+                "config/"
+            ]
+        },
+        {
+            "plugins": [
+                {
+                    "core": [
+                        "index.js",
+                        "routes/",
+                        "components/"
+                    ]
+                }
+            ]
+        },
+        "package.json"
+    ]
+}

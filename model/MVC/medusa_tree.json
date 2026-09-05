@@ -1,0 +1,30 @@
+ {
+    "medusa": [
+        {
+            "src": [
+                {
+                    "api": [
+                        "routes/",
+                        "middlewares/"
+                    ]
+                },
+                {
+                    "modules": [
+                        "product/",
+                        "order/",
+                        "customer/"
+                    ]
+                },
+                {
+                    "loaders": []
+                },
+                {
+                    "config": [
+                        "default.json"
+                    ]
+                }
+            ]
+        },
+        "package.json"
+    ]
+}

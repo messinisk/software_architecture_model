@@ -1,0 +1,46 @@
+{
+    "magento2": [
+        {
+            "app": [
+                {
+                    "code": [
+                        {
+                            "Vendor": [
+                                {
+                                    "Module": [
+                                        "etc/",
+                                        "Controller/",
+                                        "Model/",
+                                        "View/",
+                                        "Block/"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "design/",
+                "etc/"
+            ]
+        },
+        {
+            "vendor": []
+        },
+        {
+            "pub": [
+                "static/",
+                "media/",
+                "index.php"
+            ]
+        },
+        {
+            "generated": [
+                "code/",
+                "metadata/"
+            ]
+        },
+        "bin/",
+        "composer.json",
+        "index.php"
+    ]
+}

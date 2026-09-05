@@ -1,0 +1,39 @@
+{
+    "prestashop": [
+        {
+            "app": [
+                "config/",
+                "Resources/",
+                "PrestaShopBundle/"
+            ]
+        },
+        {
+            "modules": [
+                {
+                    "mymodule": [
+                        "mymodule.php",
+                        "controllers/",
+                        "views/",
+                        "translations/"
+                    ]
+                }
+            ]
+        },
+        {
+            "themes": [
+                {
+                    "classic": [
+                        "templates/",
+                        "assets/",
+                        "config/"
+                    ]
+                }
+            ]
+        },
+        "classes/",
+        "controllers/",
+        "override/",
+        "vendor/",
+        "index.php"
+    ]
+}

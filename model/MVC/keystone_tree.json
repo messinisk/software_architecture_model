@@ -1,0 +1,26 @@
+{
+    "keystone": [
+        "keystone.ts",
+        {
+            "lists": [
+                "User.ts",
+                "Post.ts"
+            ]
+        },
+        {
+            "schemas": []
+        },
+        {
+            "routes": [
+                "index.ts"
+            ]
+        },
+        {
+            "public": [
+                "images/",
+                "styles/"
+            ]
+        },
+        "package.json"
+    ]
+}

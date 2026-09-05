@@ -1,0 +1,30 @@
+{
+    "opencart": [
+        {
+            "admin": [
+                "controller/",
+                "model/",
+                "view/",
+                "language/"
+            ]
+        },
+        {
+            "catalog": [
+                "controller/",
+                "model/",
+                "view/",
+                "language/"
+            ]
+        },
+        {
+            "system": [
+                "config/",
+                "library/",
+                "storage/"
+            ]
+        },
+        "image/",
+        "vendor/",
+        "index.php"
+    ]
+}
