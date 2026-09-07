@@ -1,0 +1,32 @@
+{
+  "Flow_Based_Architecture": {
+    "files": [
+      "compiler_pipeline.json",
+      "etl_pipeline.json",
+      "ml_pipeline.json",
+      "pipeline.json",
+      "video_pipeline.json"
+    ],
+    "descriptions": {
+      "compiler_pipeline.json": "Compiler / Static Analyzer Pipeline",
+      "etl_pipeline.json": {
+        "description": "ETL Pipeline = Αρχιτεκτονική ροής δεδομένων με 3 στάδια",
+        "stages": {
+          "extract": {
+            "definition": "Ανάκτηση δεδομένων από πηγή",
+            "sources": ["DB", "API", "CSV", "S3"]
+          },
+          "transform": {
+            "definition": "Καθαρισμός, enrichment, normalization, aggregation"
+          },
+          "load": {
+            "definition": "Φόρτωση σε data warehouse, lake, mart, analytics DB"
+          }
+        }
+      },
+      "ml_pipeline.json": "Machine Learning Pipeline",
+      "pipeline.json": "Generic Pipeline",
+      "video_pipeline.json": "Video Processing Pipeline"
+    }
+  }
+}
