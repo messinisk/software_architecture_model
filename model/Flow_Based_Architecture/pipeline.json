@@ -1,0 +1,64 @@
+{
+    "name": "example_pipeline",
+    "type": "flow_based",
+    "description": "Sequential data transformation pipeline",
+    "stages": [
+        {
+            "id": "load_data",
+            "type": "input",
+            "function": "load_data_from_source",
+            "inputs": [],
+            "outputs": ["raw_data"],
+            "next": "clean_data",
+            "config": {
+                "source": "s3://bucket/data.csv",
+                "format": "csv"
+            }
+        },
+        {
+            "id": "clean_data",
+            "type": "transform",
+            "function": "clean_missing_values",
+            "inputs": ["raw_data"],
+            "outputs": ["clean_data"],
+            "next": "feature_engineering",
+            "config": {
+                "strategy": "mean_imputation"
+            }
+        },
+        {
+            "id": "feature_engineering",
+            "type": "transform",
+            "function": "add_features",
+            "inputs": ["clean_data"],
+            "outputs": ["features"],
+            "next": "model_training",
+            "config": {
+                "features": ["length", "entropy"]
+            }
+        },
+        {
+            "id": "model_training",
+            "type": "train",
+            "function": "train_model",
+            "inputs": ["features"],
+            "outputs": ["model"],
+            "next": "evaluation",
+            "config": {
+                "algorithm": "random_forest",
+                "params": {"n_estimators": 100}
+            }
+        },
+        {
+            "id": "evaluation",
+            "type": "evaluate",
+            "function": "evaluate_model",
+            "inputs": ["model"],
+            "outputs": ["metrics"],
+            "next": null,
+            "config": {
+                "metrics": ["accuracy", "f1"]
+            }
+        }
+    ]
+}

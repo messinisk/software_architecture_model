@@ -1,0 +1,10 @@
+{
+    "name": "sentiment_analysis",
+    "type": "flow_based",
+    "stages": [
+        {"id": "preprocess", "function": "tokenize", "next": "vectorize"},
+        {"id": "vectorize", "function": "tfidf", "next": "train"},
+        {"id": "train", "function": "train_svm", "next": "evaluate"},
+        {"id": "evaluate", "function": "compute_metrics", "next": null}
+    ]
+}

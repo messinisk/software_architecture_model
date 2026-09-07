@@ -1,0 +1,9 @@
+{
+    "name": "video_encoder",
+    "type": "flow_based",
+    "stages": [
+        {"id": "decode", "function": "decode_frames", "next": "filter"},
+        {"id": "filter", "function": "apply_filters", "next": "encode"},
+        {"id": "encode", "function": "encode_h264", "next": null}
+    ]
+}

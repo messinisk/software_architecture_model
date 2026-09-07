@@ -1,0 +1,10 @@
+{
+    "name": "simple_compiler",
+    "type": "flow_based",
+    "stages": [
+        {"id": "lex", "function": "tokenize", "next": "parse"},
+        {"id": "parse", "function": "build_ast", "next": "semantic"},
+        {"id": "semantic", "function": "check_semantics", "next": "generate"},
+        {"id": "generate", "function": "generate_bytecode", "next": null}
+    ]
+}
