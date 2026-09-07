@@ -1,0 +1,14 @@
+{
+    "viewmodels": {
+        "user_vm.py": "ViewModel"
+    },
+    "models": {
+        "user.py": "Model"
+    },
+    "views": {
+        "user_view.py": "View"
+    },
+    "services": {
+        "api_service.py": "Service Layer"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "viewmodels": {
+        "user.js": "ViewModel"
+    },
+    "views": {
+        "user.html": "View"
+    },
+    "models": {
+        "user.js": "Model"
+    }
+}

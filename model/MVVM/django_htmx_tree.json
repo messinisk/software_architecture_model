@@ -1,0 +1,11 @@
+{
+    "app": {
+        "views.py": "ViewModel",
+        "models.py": "Model",
+        "templates": {
+            "user.html": "View"
+        }
+    },
+    "static": {},
+    "urls.py": "Routing"
+}

@@ -1,0 +1,13 @@
+{
+    "src": {
+        "app": {
+            "user": {
+                "user.component.ts": "ViewModel",
+                "user.component.html": "View"
+            },
+            "services": {
+                "user.service.ts": "Model"
+            }
+        }
+    }
+}

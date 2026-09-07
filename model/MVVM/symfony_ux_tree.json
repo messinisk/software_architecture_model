@@ -1,0 +1,18 @@
+{
+    "src": {
+        "Controller": {
+            "ProductController.php": "ViewModel"
+        },
+        "Entity": {
+            "Product.php": "Model"
+        }
+    },
+    "templates": {
+        "product.html.twig": "View"
+    },
+    "assets": {
+        "controllers": {
+            "product_controller.js": "Reactive View Logic"
+        }
+    }
+}

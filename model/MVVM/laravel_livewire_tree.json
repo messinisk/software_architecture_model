@@ -1,0 +1,22 @@
+{
+    "app": {
+        "Http": {
+            "Livewire": {
+                "UserForm.php": "ViewModel"
+            }
+        },
+        "Models": {
+            "User.php": "Model"
+        }
+    },
+    "resources": {
+        "views": {
+            "livewire": {
+                "user-form.blade.php": "View"
+            }
+        }
+    },
+    "routes": {
+        "web.php": "Routing"
+    }
+}
