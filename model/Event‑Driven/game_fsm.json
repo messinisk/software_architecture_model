@@ -1,0 +1,24 @@
+{
+    "name": "player_state_machine",
+    "type": "event_driven",
+    "state": {
+        "current": "idle",
+        "allowed_states": ["idle", "walking", "attacking", "dead"]
+    },
+    "events": {
+        "move": {"allowed_from": ["idle"], "next_state": "walking", "handler": "on_move"},
+        "attack": {"allowed_from": ["idle", "walking"], "next_state": "attacking", "handler": "on_attack"},
+        "hit": {"allowed_from": ["idle", "walking", "attacking"], "next_state": "dead", "handler": "on_hit"},
+        "stop": {"allowed_from": ["walking"], "next_state": "idle", "handler": "on_stop"}
+    },
+    "handlers": {
+        "on_move": {"type": "function", "side_effects": ["play_sound", "animate_walk"]},
+        "on_attack": {"type": "function", "side_effects": ["animate_attack"]},
+        "on_hit": {"type": "function", "side_effects": ["play_hit_sound", "drop_loot"]},
+        "on_stop": {"type": "function", "side_effects": ["stop_animation"]}
+    },
+    "loop": {
+        "tick_rate": 60,
+        "tick_handler": "game_tick"
+    }
+}

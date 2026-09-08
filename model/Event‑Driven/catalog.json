@@ -1,0 +1,8 @@
+{
+  "Reactive Real‑Time Application": "reactive_app.json",
+  "Microservices + Kafka/RabbitMQ": "microservice_events.json",
+  "IoT / Sensor Event Dict Tree": "iot_system.json",
+  "Game Loop / FSM" : "game_fsm.json",
+  "Event‑Driven Architecture" : "event_system.json"
+
+}

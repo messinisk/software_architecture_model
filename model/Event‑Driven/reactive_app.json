@@ -1,0 +1,22 @@
+{
+    "name": "chat_realtime",
+    "type": "event_driven",
+    "state": {"current": "connected", "allowed_states": ["connected", "disconnected"]},
+    "streams": {
+        "incoming_messages": {"source": "websocket", "handler": "on_message"},
+        "user_status": {"source": "presence_service", "handler": "on_status_change"}
+    },
+    "events": {
+        "message_received": {"next_state": "connected", "handler": "on_message"},
+        "user_left": {"next_state": "disconnected", "handler": "on_disconnect"}
+    },
+    "handlers": {
+        "on_message": {"type": "function", "side_effects": ["broadcast"]},
+        "on_status_change": {"type": "function", "side_effects": ["update_ui"]},
+        "on_disconnect": {"type": "function", "side_effects": ["cleanup"]}
+    },
+    "config": {
+        "backpressure": "drop_oldest",
+        "max_queue_size": 1000
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "name": "order_service",
+    "type": "event_driven",
+    "state": {"current": "idle", "allowed_states": ["idle", "processing", "completed", "error"]},
+    "events": {
+        "order_created": {
+            "topic": "orders",
+            "next_state": "processing",
+            "handler": "process_order"
+        },
+        "order_failed": {
+            "topic": "orders",
+            "next_state": "error",
+            "handler": "handle_failure"
+        },
+        "order_completed": {
+            "topic": "orders",
+            "next_state": "completed",
+            "handler": "finalize_order"
+        }
+    },
+    "handlers": {
+        "process_order": {"type": "consumer", "side_effects": ["publish_event:order_completed"]},
+        "handle_failure": {"type": "consumer", "side_effects": ["publish_event:order_failed"]},
+        "finalize_order": {"type": "consumer", "side_effects": ["update_db"]}
+    },
+    "broker": {
+        "type": "kafka",
+        "topics": ["orders"],
+        "retry_policy": {"max_retries": 3, "delay": 2000}
+    }
+}

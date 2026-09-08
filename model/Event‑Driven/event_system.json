@@ -1,0 +1,46 @@
+ {
+    "name": "example_event_system",
+    "type": "event_driven",
+    "state": {
+        "current": "idle",
+        "allowed_states": ["idle", "processing", "error", "completed"]
+    },
+    "events": {
+        "start": {
+            "description": "Begin processing",
+            "allowed_from": ["idle"],
+            "next_state": "processing",
+            "handler": "handle_start"
+        },
+        "fail": {
+            "description": "Error occurred",
+            "allowed_from": ["processing"],
+            "next_state": "error",
+            "handler": "handle_fail"
+        },
+        "finish": {
+            "description": "Processing completed",
+            "allowed_from": ["processing"],
+            "next_state": "completed",
+            "handler": "handle_finish"
+        },
+        "reset": {
+            "description": "Return to idle",
+            "allowed_from": ["error", "completed"],
+            "next_state": "idle",
+            "handler": "handle_reset"
+        }
+    },
+    "handlers": {
+        "handle_start": {"type": "function", "side_effects": ["log", "publish_event"]},
+        "handle_fail": {"type": "function", "side_effects": ["alert", "rollback"]},
+        "handle_finish": {"type": "function", "side_effects": ["store_results"]},
+        "handle_reset": {"type": "function", "side_effects": []}
+    },
+    "config": {
+        "async": true,
+        "timestamped_events": true,
+        "broker": "kafka",
+        "topic": "system_events"
+    }
+}

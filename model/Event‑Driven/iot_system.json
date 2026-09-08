@@ -1,0 +1,30 @@
+{
+    "name": "temperature_monitor",
+    "type": "event_driven",
+    "state": {
+        "current": "normal",
+        "allowed_states": ["normal", "warning", "critical"]
+    },
+    "events": {
+        "sensor_read": {
+            "description": "New temperature reading",
+            "allowed_from": ["normal", "warning", "critical"],
+            "handler": "handle_read"
+        }
+    },
+    "handlers": {
+        "handle_read": {
+            "type": "function",
+            "side_effects": ["store_reading", "evaluate_thresholds"]
+        }
+    },
+    "thresholds": {
+        "warning": 50,
+        "critical": 70
+    },
+    "transitions": {
+        "normal_to_warning": {"condition": "temp >= 50", "next_state": "warning"},
+        "warning_to_critical": {"condition": "temp >= 70", "next_state": "critical"},
+        "critical_to_normal": {"condition": "temp < 50", "next_state": "normal"}
+    }
+}
