@@ -1,0 +1,95 @@
+{
+    "Architecture": "Domain-Centric Architecture",
+    "Focus": [
+        "Αποτύπωση επιχειρησιακής λογικής",
+        "Ακριβής μοντελοποίηση domain εννοιών",
+        "Μακροπρόθεσμη βιωσιμότητα συστήματος"
+    ],
+
+    "UseCases": {
+        "Banking": {
+            "Description": "Χρηματοοικονομικά συστήματα με αυστηρούς κανόνες",
+            "Subdomains": [
+                "Accounts",
+                "Payments",
+                "Risk Management",
+                "Compliance"
+            ],
+            "Exceptions": [
+                "Regulatory changes",
+                "Fraud detection anomalies",
+                "Concurrency conflicts σε transactions"
+            ]
+        },
+
+        "ECommerce": {
+            "Description": "Μηχανές ηλεκτρονικού εμπορίου",
+            "Subdomains": [
+                "Catalog",
+                "Orders",
+                "Payments",
+                "Inventory"
+            ],
+            "Exceptions": [
+                "Out-of-stock conditions",
+                "Payment gateway failures",
+                "Price rule conflicts"
+            ]
+        },
+
+        "Insurance_ERP": {
+            "Description": "Ασφαλιστικά, λογιστικά και ERP συστήματα",
+            "Subdomains": [
+                "Policies",
+                "Claims",
+                "Accounting",
+                "Reporting"
+            ],
+            "Exceptions": [
+                "Policy rule contradictions",
+                "Claim fraud suspicion",
+                "Incorrect ledger entries"
+            ]
+        },
+
+        "B2B_Complex": {
+            "Description": "Σύνθετες B2B εφαρμογές με πολλαπλά subdomains",
+            "Subdomains": [
+                "Partner Management",
+                "Contract Negotiation",
+                "Workflow Automation",
+                "Data Exchange"
+            ],
+            "Exceptions": [
+                "Integration protocol mismatch",
+                "Cross-domain data inconsistency",
+                "Workflow deadlocks"
+            ]
+        }
+    },
+
+    "Benefits": [
+        "Υψηλή ακρίβεια μοντελοποίησης",
+        "Καθαρή επιχειρησιακή λογική",
+        "Ευκολία εξέλιξης και συντήρησης",
+        "Σταθερότητα σε μεγάλα συστήματα"
+    ],
+
+    "GeneralExceptions": {
+        "DomainExceptions": [
+            "Business rule violations",
+            "Invalid domain state transitions",
+            "Ambiguous domain definitions"
+        ],
+        "TechnicalExceptions": [
+            "Infrastructure failures",
+            "Latency spikes",
+            "Eventual consistency conflicts"
+        ],
+        "OrganizationalExceptions": [
+            "Αλλαγές στρατηγικής",
+            "Ασυμφωνία μεταξύ domain experts",
+            "Ελλιπής domain knowledge"
+        ]
+    }
+}
