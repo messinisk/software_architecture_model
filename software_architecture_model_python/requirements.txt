@@ -7,3 +7,4 @@ radon
 xenon
 wily
 complexipy
+pytest-cov
