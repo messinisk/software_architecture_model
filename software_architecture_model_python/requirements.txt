@@ -8,3 +8,4 @@ xenon
 wily
 complexipy
 pytest-cov
+pylint
