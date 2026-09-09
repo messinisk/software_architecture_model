@@ -14,24 +14,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    # steps:
+    #   - name: Checkout repository
+    #     uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+    #   - name: Set up Python
+    #     uses: actions/setup-python@v5
+    #     with:
+    #       python-version: "3.11"
 
-      - name: Install dependencies
-        working-directory: software_architecture_model_python
-        run: |
-          pip install -r requirements.txt
-          pip install pylint
+    #   - name: Install dependencies
+    #     working-directory: software_architecture_model_python
+    #     run: |
+    #       pip install -r requirements.txt
+    #       pip install pylint
 
-      - name: Pylint
-        working-directory: software_architecture_model_python
-        run: pylint src/software_architecture_model_python
+    #   - name: Pylint
+    #     working-directory: software_architecture_model_python
+    #     run: pylint src/software_architecture_model_python
 
  
 
