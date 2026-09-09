@@ -1,3 +1,5 @@
+"""missing-module-docstring"""
+
 from typing import Any
 
 from software_architecture_model_python.schemas.registry import SchemaRegistry

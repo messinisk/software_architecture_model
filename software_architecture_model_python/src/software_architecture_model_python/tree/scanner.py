@@ -1,3 +1,5 @@
+"""missing-module-docstring"""
+
 from pathlib import Path
 
 

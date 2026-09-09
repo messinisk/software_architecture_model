@@ -1,3 +1,5 @@
+"""missing-module-docstring"""
+
 import json
 from pathlib import Path
 from typing import Any, cast

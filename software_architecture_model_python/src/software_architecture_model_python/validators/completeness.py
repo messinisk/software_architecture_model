@@ -1,3 +1,5 @@
+"""missing-module-docstring"""
+
 from software_architecture_model_python.tree.comparator import TreeComparator
 
 

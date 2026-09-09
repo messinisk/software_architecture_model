@@ -1,4 +1,8 @@
-from software_architecture_model_python.schemas.registry import SchemaRegistry
+"""missing-module-docstring"""
+
+from software_architecture_model_python.schemas.registry import (
+    SchemaRegistry,
+)  # [missing-module-docstring]
 from software_architecture_model_python.tree.comparator import TreeComparator
 from software_architecture_model_python.tree.scanner import TreeScanner
 from software_architecture_model_python.validators.signature import (

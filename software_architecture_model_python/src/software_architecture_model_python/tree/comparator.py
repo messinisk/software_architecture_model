@@ -1,3 +1,5 @@
+"""missing-module-docstring"""
+
 import networkx as nx
 from deepdiff import DeepDiff
 
