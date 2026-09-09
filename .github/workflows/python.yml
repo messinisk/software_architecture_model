@@ -1,0 +1,60 @@
+name: Python Quality & Security
+
+on:
+  push:
+    paths:
+      - 'software_architecture_model_python/**'
+      - '.github/workflows/python.yml'
+  pull_request:
+    paths:
+      - 'software_architecture_model_python/**'
+      - '.github/workflows/python.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        working-directory: software_architecture_model_python
+        run: |
+          pip install -r requirements.txt
+          pip install pylint
+
+      - name: Pylint
+        working-directory: software_architecture_model_python
+        run: pylint src/software_architecture_model_python
+
+ 
+
+  codeql:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: python
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
