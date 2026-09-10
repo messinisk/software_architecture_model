@@ -1,4 +1,10 @@
-"""missing-module-docstring"""
+"""
+Υποσύστημα δημιουργίας αρχιτεκτονικών υπογραφών (signatures).
+
+Το module παρέχει:
+- ArchitectureSignature: δομή υπογραφής
+- SignatureEngine: μηχανή εξαγωγής canonical signatures από JSON trees
+"""
 
 from typing import Any
 
@@ -36,6 +42,14 @@ class SignatureEngine:
         self.registry = SchemaRegistry()
 
     def extract_nodes(self, tree: dict[str, Any]) -> set[str]:
+        """
+    Εξάγει όλους τους κόμβους (φακέλους) από ένα directory tree.
+
+    :param tree: Το tree parent → children.
+    :type tree: dict[str, Any]
+    :return: Σύνολο κόμβων.
+    :rtype: set[str]
+    """
         nodes: set[str] = set()
         for parent, children in tree.items():
             nodes.add(parent)
@@ -43,6 +57,14 @@ class SignatureEngine:
         return nodes
 
     def compute_depth(self, tree: dict[str, Any]) -> int:
+        """
+    Υπολογίζει το μέσο βάθος του tree.
+
+    :param tree: Το tree parent → children.
+    :type tree: dict[str, Any]
+    :return: Μέσο βάθος.
+    :rtype: int
+    """
         depths = []
         for parent, children in tree.items():
             parent_depth = parent.count("/")
@@ -52,6 +74,14 @@ class SignatureEngine:
         return int(sum(depths) / max(1, len(depths)))
 
     def extract_patterns(self, tree: dict[str, Any]) -> set[str]:
+        """
+    Εξάγει δομικά μοτίβα parent→child από το tree.
+
+    :param tree: Το tree parent → children.
+    :type tree: dict[str, Any]
+    :return: Σύνολο μοτίβων.
+    :rtype: set[str]
+    """
         patterns: set[str] = set()
         for parent, children in tree.items():
             for child in children:
@@ -61,6 +91,14 @@ class SignatureEngine:
         return patterns
 
     def build_signature(self, trees: dict[str, Any]) -> ArchitectureSignature:
+        """
+    Δημιουργεί canonical signature από όλα τα trees μιας αρχιτεκτονικής.
+
+    :param trees: Λεξικό με canonical trees.
+    :type trees: dict[str, Any]
+    :return: Η αρχιτεκτονική υπογραφή.
+    :rtype: ArchitectureSignature
+    """
         all_nodes: list[set[str]] = []
         all_patterns: list[set[str]] = []
         depths: list[int] = []
@@ -94,6 +132,12 @@ class SignatureEngine:
         )
 
     def load_signatures(self) -> dict[str, ArchitectureSignature]:
+        """
+    Φορτώνει signatures για όλες τις αρχιτεκτονικές.
+
+    :return: Λεξικό αρχιτεκτονική → signature.
+    :rtype: dict[str, ArchitectureSignature]
+    """
         signatures: dict[str, ArchitectureSignature] = {}
         all_arch = self.registry.load_all()
 
