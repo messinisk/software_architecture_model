@@ -12,14 +12,14 @@ import { fileURLToPath } from "node:url";
 import path from "path";
 import { promises as fs } from "fs";
 
-const __filename = fileURLToPath('import.meta.url');
-const __dirname = path.dirname(__filename);
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 
 export class SchemaRegistry {
   private basePath: string;
 
   constructor() {
-    this.basePath = path.resolve(__dirname, "../../../model");
+    this.basePath = path.resolve(dirname, "../../../model");
   }
 
   async loadJson(filePath: string): Promise<Record<string, any>> {

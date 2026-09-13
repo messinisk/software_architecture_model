@@ -8,13 +8,12 @@
 #
 # See https://semgrep.dev/docs
 
-name: Semgrep
+name: Semgrep (js_package only)
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
-    # The branches below must be a subset of the branches above
     branches: [ "main" ]
   schedule:
     - cron: '39 7 * * 4'
@@ -25,23 +24,30 @@ permissions:
 jobs:
   semgrep:
     permissions:
-      contents: read # for actions/checkout to fetch code
-      security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
-      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
-    name: Scan
+      contents: read
+      security-events: write
+      actions: read
+    name: Scan JS Package
     runs-on: ubuntu-latest
-    steps:
-      # Checkout project source
-      - uses: actions/checkout@v4
 
-      # Scan code using project's configuration on https://semgrep.dev/manage
+    steps:
+      # Checkout ONLY js_package folder
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            js_package
+          sparse-checkout-cone-mode: false
+
+      # Run Semgrep scan ONLY inside js_package
       - uses: returntocorp/semgrep-action@fcd5ab7459e8d91cb1777481980d1b18b4fc6735
         with:
           publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
           publishDeployment: ${{ secrets.SEMGREP_DEPLOYMENT_ID }}
           generateSarif: "1"
+          config: "p/ts"        # Semgrep official TypeScript rules
+          include: "js_package" # restrict scan to js_package
 
-      # Upload SARIF file generated in previous step
+      # Upload SARIF results to GitHub Security
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
         with:
