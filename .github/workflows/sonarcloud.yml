@@ -22,10 +22,10 @@ jobs:
             js_package
           sparse-checkout-cone-mode: false
 
-      - name: Setup Node
+      - name: Setup Node.js 22
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install dependencies
         working-directory: js_package
@@ -42,5 +42,4 @@ jobs:
             -Dsonar.organization=messinisk
             -Dsonar.sources=src
             -Dsonar.tests=tests
-            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
             -Dsonar.typescript.tsconfigPath=tsconfig.json
