@@ -7,7 +7,27 @@
     "type": "git",
     "url": "git+https://github.com/messinisk/software_architecture_model"
   },
-  "keywords": ["mvc", "mvvm", "architecture"],
+  "keywords": [
+    "mvc",
+    "mvvm",
+    "architecture"
+  ],
   "author": "messinisk",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/graphlib": "^2.1.12",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.5.1",
+    "jest": "^30.5.1",
+    "ts-jest": "^29.4.12",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "ajv": "^8.20.0",
+    "chalk": "^6.0.0",
+    "commander": "^15.0.0",
+    "dotenv": "^17.4.2",
+    "fast-deep-equal": "^3.1.3",
+    "graphlib": "^2.1.8"
+  }
 }
