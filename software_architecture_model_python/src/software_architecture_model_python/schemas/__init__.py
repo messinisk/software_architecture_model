@@ -1,5 +1,6 @@
-"""_summary_
-    """
+"""
+The schemas
+"""
 
 from .registry import SchemaRegistry
 

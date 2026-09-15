@@ -1,5 +1,5 @@
 """ Tree  modul
-    """
+"""
 
 from .comparator import TreeComparator
 from .generator import TreeGenerator
