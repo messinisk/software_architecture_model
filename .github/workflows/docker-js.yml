@@ -1,15 +1,19 @@
-FROM node:22-bookworm
-
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm ci
-
-COPY . .
-
-CMD ["npm","test"]
+name: Docker JS
 
 on:
   push:
     branches:
       - js-package
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Node image
+        run: |
+          docker build \
+            -f js_package/Dockerfile \
+            -t sam-js .

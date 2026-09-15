@@ -4,17 +4,16 @@ on:
   push:
     branches:
       - python3
-
     paths:
       - 'software_architecture_model_python/**'
       - 'pyproject.toml'
-      - '.git***/workflows/python-security.yml'
-    pull_request:
-    branches:
-        python3
+      - '.github/workflows/python-security.yml'
 
+  pull_request:
+    branches:
+      - python3
     paths:
-      - 'software_architecture_model_python/***
+      - 'software_architecture_model_python/**'
 
 jobs:
   security:
@@ -22,20 +21,22 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/*heckout@v4
+        uses: actions/checkout@v4
 
-      - name: Setup Py*hon
-        uses: actions/setup-py*hon@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          pyt*on-version: "3.12"
+          python-version: "3.12"
 
-   
-
-    - name: Install Security Tools
+      - name: Install Security Tools
         run: |
-            python -m pip install --upgrade pip
-            pip install bandit pip-audit
+          python -m pip install --upgrade pip
+          pip install bandit pip-audit
 
       - name: Bandit
         run: |
-          bandit -r s*ftware_architecture_model_python
+          bandit -r software_architecture_model_python
+
+      - name: Pip Audit
+        run: |
+          pip-audit

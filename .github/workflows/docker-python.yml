@@ -1,22 +1,19 @@
-# docker-python.yml
-
-FROM python:3.12-slim
-
-
-RUN pip install \
-    ruff \
-    mypy \
-    pytest \
-    pytest-cov \
-    bandit \
-    pip-audit \
-    radon \
-    xenon \
-    wily \
-    complexipy \
-    pylint
+name: Docker Python
 
 on:
   push:
     branches:
       - python3
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Python image
+        run: |
+          docker build \
+            -f software_architecture_model_python/Dockerfile \
+            -t sam-python .
