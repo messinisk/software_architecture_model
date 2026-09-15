@@ -12,9 +12,9 @@ name: Semgrep (js_package only)
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "js-package" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "js-package" ]
   schedule:
     - cron: '39 7 * * 4'
 

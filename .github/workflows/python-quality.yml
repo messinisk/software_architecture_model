@@ -1,0 +1,75 @@
+name: Python Quality
+
+on:
+  push:
+    branches:
+      - python3
+
+    paths:
+      - 'software_architecture_model_python/**'
+      - 'requirements*.txt'
+      - 'pyproject.toml'
+      - '.github/workflows/python-quality.yml'
+
+  pull_request:
+    branches:
+      - python3
+
+    paths:
+      - 'software_architecture_model_python/**'
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Quality Tools
+        run: |
+          python -m pip install --upgrade pip
+
+          pip install \
+            ruff \
+            mypy \
+            pytest \
+            pytest-cov \
+            pylint \
+            radon \
+            xenon \
+            complexipy \
+            wily
+
+      - name: Ruff
+        run: |
+          ruff check software_architecture_model_python
+
+      - name: MyPy
+        run: |
+          mypy software_architecture_model_python
+
+      - name: PyLint
+        run: |
+          pylint software_architecture_model_python
+
+      - name: Radon
+        run: |
+          radon cc software_architecture_model_python -s
+
+      - name: Xenon
+        run: |
+          xenon software_architecture_model_python
+
+      - name: Complexity
+        run: |
+          complexipy software_architecture_model_python
+
+      - name: Pytest
+        run: |
+          pytest --cov=software_architecture_model_python
