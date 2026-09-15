@@ -15,15 +15,15 @@ class CompletenessCalculator:
 
     def calculate(self, input_tree: dict, canonical_tree: dict) -> float:
         """
-    Υπολογίζει την πληρότητα (%) ενός project σε σχέση με το canonical tree.
+        Υπολογίζει την πληρότητα (%) ενός project σε σχέση με το canonical tree.
 
-    :param input_tree: Το tree του project.
-    :type input_tree: dict
-    :param canonical_tree: Το canonical tree της αρχιτεκτονικής.
-    :type canonical_tree: dict
-    :return: Ποσοστό πληρότητας.
-    :rtype: float
-    """
+        :param input_tree: Το tree του project.
+        :type input_tree: dict
+        :param canonical_tree: Το canonical tree της αρχιτεκτονικής.
+        :type canonical_tree: dict
+        :return: Ποσοστό πληρότητας.
+        :rtype: float
+        """
         comparator = TreeComparator()
         comparison = comparator.compare(input_tree, canonical_tree)
 

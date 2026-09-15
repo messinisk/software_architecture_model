@@ -1,5 +1,4 @@
-""" Tree  modul
-"""
+"""Tree  modul"""
 
 from .comparator import TreeComparator
 from .generator import TreeGenerator
@@ -12,5 +11,4 @@ __all__ = [
     "TreeScanner",
     "TreeComparator",
     "TreeGenerator",
-
 ]

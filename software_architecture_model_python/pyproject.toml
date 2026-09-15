@@ -45,3 +45,9 @@ minversion = "7.0"
 addopts = "-q --cov=software_architecture_model_python --cov-report=term-missing --cov-report=html"
 testpaths = ["tests"]
 pythonpath = ["src"]
+
+[tool.pylint.messages_control]
+disable = [
+    "missing-module-docstring",
+    "missing-function-docstring",
+]

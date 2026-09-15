@@ -20,13 +20,13 @@ class TreeScanner:
 
     def scan(self, root_path: str) -> dict[str, list[str]]:
         """
-    Σκανάρει ένα directory και επιστρέφει το tree structure.
+        Σκανάρει ένα directory και επιστρέφει το tree structure.
 
-    :param root_path: Το μονοπάτι του project.
-    :type root_path: str
-    :return: Λεξικό parent → children.
-    :rtype: dict[str, list[str]]
-    """
+        :param root_path: Το μονοπάτι του project.
+        :type root_path: str
+        :return: Λεξικό parent → children.
+        :rtype: dict[str, list[str]]
+        """
         root = Path(root_path)
         tree: dict[str, list[str]] = {}
 

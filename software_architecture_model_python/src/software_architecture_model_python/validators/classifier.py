@@ -32,13 +32,13 @@ class ArchitectureClassifier:
 
     def classify(self, project_path: str) -> dict[str, float]:
         """
-    Υπολογίζει score ομοιότητας για κάθε αρχιτεκτονική.
+        Υπολογίζει score ομοιότητας για κάθε αρχιτεκτονική.
 
-    :param project_path: Το μονοπάτι του project.
-    :type project_path: str
-    :return: Λεξικό αρχιτεκτονική → score.
-    :rtype: dict[str, float]
-    """
+        :param project_path: Το μονοπάτι του project.
+        :type project_path: str
+        :return: Λεξικό αρχιτεκτονική → score.
+        :rtype: dict[str, float]
+        """
         input_tree = self.scanner.scan(project_path)
         results: dict[str, float] = {}
 
@@ -67,28 +67,28 @@ class ArchitectureClassifier:
 
     def best_match(self, project_path: str) -> tuple[str, float]:
         """
-    Επιστρέφει την αρχιτεκτονική με το υψηλότερο score.
+        Επιστρέφει την αρχιτεκτονική με το υψηλότερο score.
 
-    :param project_path: Το μονοπάτι του project.
-    :type project_path: str
-    :return: Ζεύγος (όνομα αρχιτεκτονικής, score).
-    :rtype: tuple[str, float]
-    """
+        :param project_path: Το μονοπάτι του project.
+        :type project_path: str
+        :return: Ζεύγος (όνομα αρχιτεκτονικής, score).
+        :rtype: tuple[str, float]
+        """
         scores = self.classify(project_path)
         best = max(scores.items(), key=lambda x: x[1])
         return best
 
     def signature_score(self, input_nodes: set[str], signature: ArchitectureSignature) -> float:
         """
-    Υπολογίζει score ομοιότητας με βάση την αρχιτεκτονική υπογραφή (signature).
+        Υπολογίζει score ομοιότητας με βάση την αρχιτεκτονική υπογραφή (signature).
 
-    :param input_nodes: Οι κόμβοι του input tree.
-    :type input_nodes: set[str]
-    :param signature: Η υπογραφή της αρχιτεκτονικής.
-    :type signature: ArchitectureSignature
-    :return: Score ομοιότητας (0–1).
-    :rtype: float
-    """
+        :param input_nodes: Οι κόμβοι του input tree.
+        :type input_nodes: set[str]
+        :param signature: Η υπογραφή της αρχιτεκτονικής.
+        :type signature: ArchitectureSignature
+        :return: Score ομοιότητας (0–1).
+        :rtype: float
+        """
         required_match = len(input_nodes & signature.required_nodes) / max(
             1, len(signature.required_nodes)
         )

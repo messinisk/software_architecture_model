@@ -39,13 +39,13 @@ class TreeComparator:
 
     def build_graph(self, tree: dict[str, list[str]]) -> nx.DiGraph:
         """
-    Μετατρέπει ένα directory tree σε γράφο NetworkX.
+        Μετατρέπει ένα directory tree σε γράφο NetworkX.
 
-    :param tree: Λεξικό με parent → children.
-    :type tree: dict[str, list[str]]
-    :return: Κατευθυνόμενος γράφος που αναπαριστά το tree.
-    :rtype: networkx.DiGraph
-    """
+        :param tree: Λεξικό με parent → children.
+        :type tree: dict[str, list[str]]
+        :return: Κατευθυνόμενος γράφος που αναπαριστά το tree.
+        :rtype: networkx.DiGraph
+        """
         g = nx.DiGraph()
         for parent, children in tree.items():
             for child in children:
@@ -56,15 +56,15 @@ class TreeComparator:
         self, input_tree: dict[str, list[str]], canonical_tree: dict[str, list[str]]
     ) -> dict[str, float]:
         """
-    Συγκρίνει δύο trees και επιστρέφει μετρικές ομοιότητας.
+        Συγκρίνει δύο trees και επιστρέφει μετρικές ομοιότητας.
 
-    :param input_tree: Το tree του project.
-    :type input_tree: dict[str, list[str]]
-    :param canonical_tree: Το canonical tree της αρχιτεκτονικής.
-    :type canonical_tree: dict[str, list[str]]
-    :return: Μετρικές σύγκρισης (jaccard, missing, extra).
-    :rtype: dict[str, float]
-    """
+        :param input_tree: Το tree του project.
+        :type input_tree: dict[str, list[str]]
+        :param canonical_tree: Το canonical tree της αρχιτεκτονικής.
+        :type canonical_tree: dict[str, list[str]]
+        :return: Μετρικές σύγκρισης (jaccard, missing, extra).
+        :rtype: dict[str, float]
+        """
         input_graph = self.build_graph(input_tree)
         canonical_graph = self.build_graph(canonical_tree)
 
